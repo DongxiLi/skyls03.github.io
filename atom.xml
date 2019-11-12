@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+  <title>Sky03&#39;s Blog</title>
+  
+  <subtitle>Let&#39;s do it!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.sky03.cn/"/>
+  <updated>2019-10-31T16:00:00.000Z</updated>
+  <id>https://blog.sky03.cn/</id>
+  
+  <author>
+    <name>Sky03</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>超好用的软件或插件集合</title>
+    <link href="https://blog.sky03.cn/2019/4873.html"/>
+    <id>https://blog.sky03.cn/2019/4873.html</id>
+    <published>2019-10-30T16:00:00.000Z</published>
+    <updated>2019-10-31T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人" scheme="https://blog.sky03.cn/categories/%E4%B8%AA%E4%BA%BA/"/>
+    
+    
+      <category term="软件" scheme="https://blog.sky03.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>失踪人口回归系列</title>
+    <link href="https://blog.sky03.cn/2019/1011.html"/>
+    <id>https://blog.sky03.cn/2019/1011.html</id>
+    <published>2019-10-13T16:00:00.000Z</published>
+    <updated>2019-10-22T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;因为要专升本，不得不放弃继续自学java。&lt;/p&gt;
+&lt;h2 id=&quot;现在&quot;&gt;&lt;a href=&quot;#现在&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人" scheme="https://blog.sky03.cn/categories/%E4%B8%AA%E4%BA%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>未来-软路由-server-nas解决方案</title>
+    <link href="https://blog.sky03.cn/2019/1012.html"/>
+    <id>https://blog.sky03.cn/2019/1012.html</id>
+    <published>2019-09-25T16:00:00.000Z</published>
+    <updated>2019-10-22T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;NAS&quot;&gt;&lt;a href=&quot;#NAS&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人" scheme="https://blog.sky03.cn/categories/%E4%B8%AA%E4%BA%BA/"/>
+    
+    
+      <category term="软路由" scheme="https://blog.sky03.cn/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mybatis</title>
+    <link href="https://blog.sky03.cn/2019/13919.html"/>
+    <id>https://blog.sky03.cn/2019/13919.html</id>
+    <published>2019-04-20T16:00:00.000Z</published>
+    <updated>2019-10-26T15:47:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Mybatis&quot;&gt;&lt;a href=&quot;#1-Mybatis&quot; class=&quot;headerlink&quot; title=&quot;1.Mybatis&quot;&gt;&lt;/a&gt;1.Mybatis&lt;/h2&gt;&lt;h3 id=&quot;1-1-Mybatis的概述&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="Framework" scheme="https://blog.sky03.cn/categories/Java/Framework/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="Mybatis" scheme="https://blog.sky03.cn/tags/Mybatis/"/>
+    
+      <category term="Framework" scheme="https://blog.sky03.cn/tags/Framework/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle</title>
+    <link href="https://blog.sky03.cn/2019/64820.html"/>
+    <id>https://blog.sky03.cn/2019/64820.html</id>
+    <published>2019-04-19T16:00:00.000Z</published>
+    <updated>2019-04-26T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Oracle数据库的安装&quot;&gt;&lt;a href=&quot;#Oracle数据库的安装&quot; class=&quot;headerlink&quot; title=&quot;Oracle数据库的安装&quot;&gt;&lt;/a&gt;Oracle数据库的安装&lt;/h2&gt;&lt;p&gt;我安装的Oracle数据库版本为Oracle
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具和中间件" scheme="https://blog.sky03.cn/categories/%E5%B7%A5%E5%85%B7%E5%92%8C%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+      <category term="数据库" scheme="https://blog.sky03.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="Oracle" scheme="https://blog.sky03.cn/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven</title>
+    <link href="https://blog.sky03.cn/2019/38008.html"/>
+    <id>https://blog.sky03.cn/2019/38008.html</id>
+    <published>2019-04-08T08:00:00.000Z</published>
+    <updated>2019-06-04T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是Maven？&quot;&gt;&lt;a href=&quot;#什么是Maven？&quot; class=&quot;headerlink&quot; title=&quot;什么是Maven？&quot;&gt;&lt;/a&gt;什么是Maven？&lt;/h2&gt;&lt;p&gt;Maven 是专门用于构建和管理Java相关项目的工具。&lt;/p&gt;
+&lt;p&gt;Maven
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具和中间件" scheme="https://blog.sky03.cn/categories/%E5%B7%A5%E5%85%B7%E5%92%8C%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+      <category term="Maven" scheme="https://blog.sky03.cn/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax&amp;Json</title>
+    <link href="https://blog.sky03.cn/2019/41602.html"/>
+    <id>https://blog.sky03.cn/2019/41602.html</id>
+    <published>2019-04-03T16:00:00.000Z</published>
+    <updated>2019-04-06T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;AJAX：&quot;&gt;&lt;a href=&quot;#AJAX：&quot; class=&quot;headerlink&quot; title=&quot;AJAX：&quot;&gt;&lt;/a&gt;AJAX：&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis</title>
+    <link href="https://blog.sky03.cn/2019/27273.html"/>
+    <id>https://blog.sky03.cn/2019/27273.html</id>
+    <published>2019-04-03T16:00:00.000Z</published>
+    <updated>2019-04-06T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Redis&quot;&gt;&lt;a href=&quot;#Redis&quot; class=&quot;headerlink&quot; title=&quot;Redis&quot;&gt;&lt;/a&gt;Redis&lt;/h2&gt;&lt;h3 id=&quot;概念：-redis是一款高性能的NOSQL系列的非关系型数据库&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Filter&amp;Listener</title>
+    <link href="https://blog.sky03.cn/2019/50659.html"/>
+    <id>https://blog.sky03.cn/2019/50659.html</id>
+    <published>2019-03-31T16:00:00.000Z</published>
+    <updated>2019-04-05T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JavaWeb三大组件：&quot;&gt;&lt;a href=&quot;#JavaWeb三大组件：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSP的EL&amp;JSTL</title>
+    <link href="https://blog.sky03.cn/2019/34183.html"/>
+    <id>https://blog.sky03.cn/2019/34183.html</id>
+    <published>2019-03-28T03:05:00.000Z</published>
+    <updated>2019-03-31T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JSP&quot;&gt;&lt;a href=&quot;#JSP&quot; class=&quot;headerlink&quot; title=&quot;JSP:&quot;&gt;&lt;/a&gt;JSP:&lt;/h2&gt;&lt;h3 id=&quot;1-指令&quot;&gt;&lt;a href=&quot;#1-指令&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cookie&amp;Session</title>
+    <link href="https://blog.sky03.cn/2019/54103.html"/>
+    <id>https://blog.sky03.cn/2019/54103.html</id>
+    <published>2019-03-26T16:00:00.000Z</published>
+    <updated>2019-04-26T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;会话技术&quot;&gt;&lt;a href=&quot;#会话技术&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Servlet-下</title>
+    <link href="https://blog.sky03.cn/2019/33672.html"/>
+    <id>https://blog.sky03.cn/2019/33672.html</id>
+    <published>2019-03-24T16:00:00.000Z</published>
+    <updated>2019-04-02T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;HTTP协议：&quot;&gt;&lt;a href=&quot;#HTTP协议：&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议：&quot;&gt;&lt;/a&gt;HTTP协议：&lt;/h2&gt;&lt;h3 id=&quot;1-请求消息：客户端发送给服务器端的数据&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC连接池</title>
+    <link href="https://blog.sky03.cn/2019/27625.html"/>
+    <id>https://blog.sky03.cn/2019/27625.html</id>
+    <published>2019-03-20T16:00:00.000Z</published>
+    <updated>2019-05-04T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;数据库连接池&quot;&gt;&lt;a href=&quot;#数据库连接池&quot; class=&quot;headerlink&quot; title=&quot;数据库连接池&quot;&gt;&lt;/a&gt;数据库连接池&lt;/h2&gt;&lt;h3 id=&quot;概念：&quot;&gt;&lt;a href=&quot;#概念：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+    
+      <category term="Java基础" scheme="https://blog.sky03.cn/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC</title>
+    <link href="https://blog.sky03.cn/2019/23591.html"/>
+    <id>https://blog.sky03.cn/2019/23591.html</id>
+    <published>2019-03-19T16:00:00.000Z</published>
+    <updated>2019-03-20T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;驱动包的注册&quot;&gt;&lt;a href=&quot;#驱动包的注册&quot; class=&quot;headerlink&quot; title=&quot;驱动包的注册&quot;&gt;&lt;/a&gt;驱动包的注册&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+    
+      <category term="Java基础" scheme="https://blog.sky03.cn/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Servlet-上</title>
+    <link href="https://blog.sky03.cn/2019/55715.html"/>
+    <id>https://blog.sky03.cn/2019/55715.html</id>
+    <published>2019-03-15T16:00:00.000Z</published>
+    <updated>2019-05-13T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/categories/Java/J2EE/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+      <category term="J2EE" scheme="https://blog.sky03.cn/tags/J2EE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac使用优化</title>
+    <link href="https://blog.sky03.cn/2019/10258.html"/>
+    <id>https://blog.sky03.cn/2019/10258.html</id>
+    <published>2019-03-13T16:00:00.000Z</published>
+    <updated>2019-03-16T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;让Mac的Dock快速显示和隐藏&quot;&gt;&lt;a href=&quot;#让Mac的Dock快速显示和隐藏&quot; class=&quot;headerlink&quot; title=&quot;让Mac的Dock快速显示和隐藏&quot;&gt;&lt;/a&gt;让Mac的Dock快速显示和隐藏&lt;/h2&gt;&lt;p&gt;使用OS
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://blog.sky03.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Mac" scheme="https://blog.sky03.cn/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo安装教程</title>
+    <link href="https://blog.sky03.cn/2019/41882.html"/>
+    <id>https://blog.sky03.cn/2019/41882.html</id>
+    <published>2019-03-06T16:00:00.000Z</published>
+    <updated>2019-03-13T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本项目基于macOS（Windows也同样适用）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;0-前言&quot;&gt;&lt;a href=&quot;#0-前言&quot; class=&quot;headerlink&quot; title=&quot;0. 前言&quot;&gt;&lt;/a&gt;0.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://blog.sky03.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Hexo" scheme="https://blog.sky03.cn/categories/%E6%95%99%E7%A8%8B/Hexo/"/>
+    
+    
+      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Hexo" scheme="https://blog.sky03.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac终端配置</title>
+    <link href="https://blog.sky03.cn/2019/33696.html"/>
+    <id>https://blog.sky03.cn/2019/33696.html</id>
+    <published>2019-02-24T16:00:00.000Z</published>
+    <updated>2019-04-02T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装Homebrew&quot;&gt;&lt;a href=&quot;#安装Homebrew&quot; class=&quot;headerlink&quot; title=&quot;安装Homebrew&quot;&gt;&lt;/a&gt;安装Homebrew&lt;/h2&gt;&lt;p&gt;终端执行代码：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Mac" scheme="https://blog.sky03.cn/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之注解</title>
+    <link href="https://blog.sky03.cn/2019/26879.html"/>
+    <id>https://blog.sky03.cn/2019/26879.html</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-04-26T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;注解&quot;&gt;&lt;a href=&quot;#注解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+    
+      <category term="Java基础" scheme="https://blog.sky03.cn/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之反射</title>
+    <link href="https://blog.sky03.cn/2019/31610.html"/>
+    <id>https://blog.sky03.cn/2019/31610.html</id>
+    <published>2019-02-16T16:00:00.000Z</published>
+    <updated>2019-04-26T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Java反射：框架设计的灵魂&quot;&gt;&lt;a href=&quot;#Java反射：框架设计的灵魂&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+      <category term="高级" scheme="https://blog.sky03.cn/categories/Java/%E9%AB%98%E7%BA%A7/"/>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/tags/Java/"/>
+    
+  </entry>
+  
+</feed>
