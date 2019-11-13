@@ -731,7 +731,7 @@ export JAVA_HOME JRE_HOME CLASS_PATH PATH<span aria-hidden="true" class="line-nu
         owner: 'fly-03',
         admin: ["fly-03","skyls03"],
         //id: md5(decodeURI(location.pathname)),   // 使用URI的med5加密字符串当issue的id
-        id: decodeURI(location.pathname),
+        id: location.pathname,
         distractionFreeMode: true  // Facebook-like distraction free mode
     });
 
