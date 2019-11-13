@@ -566,8 +566,9 @@
         owner: 'fly-03',
         admin: ["fly-03","skyls03"],
         //id: md5(decodeURI(location.pathname)),   // 使用URI的med5加密字符串当issue的id
-        id: location.pathname,
-        distractionFreeMode: true  // Facebook-like distraction free mode
+        id: decodeURI(location.pathname),
+        distractionFreeMode: false,  // Facebook-like distraction free mode
+        createIssueManually: true
     });
 
     gitalk.render('gitalk-container');
