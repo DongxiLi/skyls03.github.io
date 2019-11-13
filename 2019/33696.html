@@ -800,9 +800,10 @@ DISABLE_UPDATE_PROMPT<span class="token operator">=</span>true<span aria-hidden=
         clientSecret: '9eb212e068833e867f1cfae3dd4855b8520be712',
         repo: 'Sky03-Blog-Comments',
         owner: 'fly-03',
-        admin: ["skyls03","fly-03"],
-        id: md5(decodeURI(location.pathname)),   // 使用URI的med5加密字符串当issue的id
-        distractionFreeMode: false  // Facebook-like distraction free mode
+        admin: ["fly-03","skyls03"],
+        //id: md5(decodeURI(location.pathname)),   // 使用URI的med5加密字符串当issue的id
+        id: decodeURI(location.pathname),
+        distractionFreeMode: true  // Facebook-like distraction free mode
     });
 
     gitalk.render('gitalk-container');
