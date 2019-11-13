@@ -20,7 +20,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Hexo博客优化 | Sky03&#39;s Blog</title>
-    <link rel="icon" type="image/png" href="/medias/logo.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -44,7 +44,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Sky03's Blog</span>
                 </a>
@@ -142,7 +142,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Sky03's Blog</div>
         <div class="logo-desc">
@@ -405,7 +405,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.7k
                 </div>
                 
 
@@ -469,10 +469,26 @@
 <p>到这里就配置完了，执行<code>hexo cl&amp;&amp;hexo g&amp;&amp;hexo s</code>就有效果了，以上步骤理论上任何主题都可以用</p>
 <p>但是一般情况下懒加载和gallery插件会发生冲突，结果可能就是点开图片，左翻右翻都是loading image。matery主题的解决方案是：</p>
 <p>修改  <code>/themes/matery/source/js</code>   中的  <code>matery.js</code>文件</p>
-<p>再第108行加上：</p>
+<p>在第108行加上：</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'img[data-original]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"data-original"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="自定义loading图片"><a href="#自定义loading图片" class="headerlink" title="自定义loading图片"></a>自定义loading图片</h4><p><code>hexo-lazyload-image</code> 插件提供了自定义loading图片的选项</p>
+<p>方法就是在 <code>loadingImg</code> 后配置图片的路径就好了</p>
+<p><strong>Like this：</strong> </p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">lazyload</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true </span>
+  <span class="token key atrule">onlypost</span><span class="token punctuation">:</span> <span class="token boolean important">false  </span><span class="token comment" spellcheck="true"># 是否只对文章的图片做懒加载</span>
+  <span class="token key atrule">loadingImg</span><span class="token punctuation">:</span> /medias/loading.gif <span class="token comment" spellcheck="true"># eg ./images/loading.gif</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="CDN优化加速"><a href="#CDN优化加速" class="headerlink" title="CDN优化加速"></a>CDN优化加速</h3><p>本节参考：<a href="https://removeif.github.io/2019/09/25/tools/github-page网站cdn优化加速.html" target="_blank" rel="noopener">github page网站cdn优化加速 - 辣椒の酱</a></p>
+<p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科 </p>
+<p>放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。 </p>
+<p><strong>用法：</strong></p>
+<pre class="line-numbers language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> <strong>例如：</strong></p>
+<pre class="line-numbers language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> 注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源</p>
+<p>经本人不科学测试521k的文件阿里云的OSS比jsDelivr + Github慢了大概250ms左右</p>
 <h3 id="代码压缩优化"><a href="#代码压缩优化" class="headerlink" title="代码压缩优化"></a>代码压缩优化</h3><h4 id="为什么要把代码压缩？"><a href="#为什么要把代码压缩？" class="headerlink" title="为什么要把代码压缩？"></a>为什么要把代码压缩？</h4><p>因为hexo生成的html、css、js等都有很多的空格或者换行，而空格和换行也是占用字节的，所以需要将空格换行去掉也就是我要进行的“压缩”。</p>
 <p>有人说空格换行能占多少字节？确实占不了多少，但是一个人访问是这么多字节，那么一百人，一万人呢？加起来这量就不少了吧，这都是流量啊！这也是很多css/js文件的后缀为*.min.js或*.min.css的原因。虽然我们可能没那么多访问量，但是能减小一点资源文件的大小也是对访问速度有那么一点提升的。</p>
 <h4 id="gulp实现代码压缩"><a href="#gulp实现代码压缩" class="headerlink" title="gulp实现代码压缩"></a>gulp实现代码压缩</h4><ul>
@@ -914,7 +930,6 @@ neat_js:
 </div>
 
 <script src="/libs/gitalk/gitalk.min.js"></script>
-<script src="/js/md5.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: '5010de82c59a66d71db9',
@@ -1235,7 +1250,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.4k</span>&nbsp;字
+                class="white-color">71.7k</span>&nbsp;字
             
             
             
