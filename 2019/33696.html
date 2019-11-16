@@ -1,19 +1,514 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="keywords" content="Mac终端配置, Sky03"><meta name="description" content="安装Homebrew终端执行代码：
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Mac终端配置, Sky03">
+    <meta name="description" content="安装Homebrew终端执行代码：
 /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;
-或者去"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Mac终端配置 | Sky03&#39;s Blog</title><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/awesome/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/aos/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/animate/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/matery.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/my.css"><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/jquery/jquery.min.js"></script><link rel="alternate" href="/atom.xml" title="Sky03's Blog" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-material-oceanic.css"><link rel="stylesheet" href="/css/prism-line-numbers.css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper head-container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">Sky03's Blog</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>留言板</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">Sky03's Blog</div><div class="logo-desc">Never really desperate, only the lost of the soul.</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fa-fw fas fa-comments"></i> 留言</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友链</a></li></ul></div></div></nav></header><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/17.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><div class="description center-align post-title">Mac终端配置</div></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:32px;bottom:155px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/教程/"><span class="chip bg-color">教程</span></a> <a href="/tags/Mac/"><span class="chip bg-color">Mac</span></a></div></div><div class="col s5 right-align"></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布于:&nbsp;&nbsp; 2019-02-25</div><div class="post-date info-break-policy"><i class="far fa-calendar-check fa-fw"></i> 更新于:&nbsp;&nbsp; 2019-04-03</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 1.1k</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>终端执行代码：</p><pre class="line-numbers language-bash"><code class="language-bash">/usr/bin/ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>或者去<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew官网</a>查看安装命令</p><p>一般会自动安装Command Line Tools for Xcode（安装Homebrew必需的插件）</p><h3 id="Homebrew常用语句"><a href="#Homebrew常用语句" class="headerlink" title="Homebrew常用语句"></a>Homebrew常用语句</h3><p>搜索：<code>brew search &lt;SoftwareName&gt;</code></p><p>更新：<code>brew install &lt;SoftwareName&gt;</code></p><p>卸载：<code>brew uninstall &lt;SoftwareName&gt;</code></p><p>显示已安装软件: <code>brew ls(list)</code></p><p>显示软件的信息：<code>brew info &lt;SoftWareName&gt;</code></p><p>Homebrew其他使用命令可以参考 <a href="https://www.jianshu.com/p/de6f1d2d37bf" target="_blank" rel="noopener">https://www.jianshu.com/p/de6f1d2d37bf</a></p><h3 id="使用brew-services管理服务开机启动"><a href="#使用brew-services管理服务开机启动" class="headerlink" title="使用brew services管理服务开机启动"></a>使用brew services管理服务开机启动</h3><p>GitHub: <a href="https://github.com/Homebrew/homebrew-services" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-services</a></p><p>一般macOS使软件开机自启的命令一般是 <code>launchctl</code>命令加载开机自动运行服务，使用<code>brew service</code>可以简化操作。</p><ul><li><p>launchctl的配置方式，以MySQL为例：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ln</span> -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>如使用brew service可以简化为:</p><pre class="line-numbers language-bash"><code class="language-bash">brew services start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ul><p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/20190403172950.png" alt></p><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><pre class="line-numbers language-bash"><code class="language-bash">brew services list  <span class="token comment" spellcheck="true"># 查看使用brew安装的服务列表</span>
+或者去">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Mac终端配置 | Sky03&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/my.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/jquery/jquery.min.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="Sky03's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Sky03's Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Sky03's Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Mac终端配置
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 32px;
+        bottom: 155px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/教程/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/Mac/">
+                                <span class="chip bg-color">Mac</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布于:&nbsp;&nbsp;
+                    2019-02-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新于:&nbsp;&nbsp;
+                    2019-04-03
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.1k
+                </div>
+                
+
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>终端执行代码：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">/usr/bin/ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或者去<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew官网</a>查看安装命令</p>
+<p>一般会自动安装Command Line Tools for Xcode（安装Homebrew必需的插件）</p>
+<h3 id="Homebrew常用语句"><a href="#Homebrew常用语句" class="headerlink" title="Homebrew常用语句"></a>Homebrew常用语句</h3><p>搜索：<code>brew search &lt;SoftwareName&gt;</code></p>
+<p>更新：<code>brew install &lt;SoftwareName&gt;</code></p>
+<p>卸载：<code>brew uninstall &lt;SoftwareName&gt;</code></p>
+<p>显示已安装软件: <code>brew ls(list)</code></p>
+<p>显示软件的信息：<code>brew info &lt;SoftWareName&gt;</code></p>
+<p>Homebrew其他使用命令可以参考 <a href="https://www.jianshu.com/p/de6f1d2d37bf" target="_blank" rel="noopener">https://www.jianshu.com/p/de6f1d2d37bf</a></p>
+<h3 id="使用brew-services管理服务开机启动"><a href="#使用brew-services管理服务开机启动" class="headerlink" title="使用brew services管理服务开机启动"></a>使用brew services管理服务开机启动</h3><p>GitHub: <a href="https://github.com/Homebrew/homebrew-services" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-services</a></p>
+<p>一般macOS使软件开机自启的命令一般是 <code>launchctl</code>命令加载开机自动运行服务，使用<code>brew service</code>可以简化操作。</p>
+<ul>
+<li><p>launchctl的配置方式，以MySQL为例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ln</span> -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>如使用brew service可以简化为:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">brew services start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/20190403172950.png" alt></p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><pre class="line-numbers language-bash"><code class="language-bash">brew services list  <span class="token comment" spellcheck="true"># 查看使用brew安装的服务列表</span>
 brew services run formula<span class="token operator">|</span>--all  <span class="token comment" spellcheck="true"># 启动服务（仅启动不注册）</span>
 brew services start formula<span class="token operator">|</span>--all  <span class="token comment" spellcheck="true"># 启动服务，并注册开机启动</span>
 brew services stop formula<span class="token operator">|</span>--all   <span class="token comment" spellcheck="true"># 停止服务，并取消注册开机启动</span>
 brew services restart formula<span class="token operator">|</span>--all  <span class="token comment" spellcheck="true"># 重启服务，并注册开机启动</span>
-brew services cleanup  <span class="token comment" spellcheck="true"># 清除已卸载应用的无用的配置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="plist配置文件存放目录"><a href="#plist配置文件存放目录" class="headerlink" title=".plist配置文件存放目录"></a>.plist配置文件存放目录</h4><ol><li><p>开机自启存放目录，需要sudo</p><pre class="line-numbers language-bash"><code class="language-bash">/Library/LaunchDaemons<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>用户登录后自启存放目录</p><pre class="line-numbers language-bash"><code class="language-bash">~/Library/LaunchAgents<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><p>可以在homebrew.mxcl.kafka.plist文件中找到服务路径、启动参数、日志路径等</p><h2 id="安装ZSH"><a href="#安装ZSH" class="headerlink" title="安装ZSH"></a>安装ZSH</h2><ol><li><p>直接用Homebrew安装zsh：</p><pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>接着使zsh生效</p><p>先使用命令</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> /etc/shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>查看/etc/shells文件中有没有</p><pre class="line-numbers language-bash"><code class="language-bash">/usr/local/bin/zsh
+brew services cleanup  <span class="token comment" spellcheck="true"># 清除已卸载应用的无用的配置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="plist配置文件存放目录"><a href="#plist配置文件存放目录" class="headerlink" title=".plist配置文件存放目录"></a>.plist配置文件存放目录</h4><ol>
+<li><p>开机自启存放目录，需要sudo</p>
+<pre class="line-numbers language-bash"><code class="language-bash">/Library/LaunchDaemons<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>用户登录后自启存放目录</p>
+<pre class="line-numbers language-bash"><code class="language-bash">~/Library/LaunchAgents<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+<p>可以在homebrew.mxcl.kafka.plist文件中找到服务路径、启动参数、日志路径等</p>
+<h2 id="安装ZSH"><a href="#安装ZSH" class="headerlink" title="安装ZSH"></a>安装ZSH</h2><ol>
+<li><p>直接用Homebrew安装zsh：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>接着使zsh生效</p>
+<p>先使用命令</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> /etc/shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看/etc/shells文件中有没有</p>
+<pre class="line-numbers language-bash"><code class="language-bash">/usr/local/bin/zsh
 或者
-/bin/zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>如果没有就用<code>vim /etc/shells</code>加上；如果有，就执行下一命令使zsh生效：</p><pre class="line-numbers language-bash"><code class="language-bash">chsh -s /usr/local/bin/zsh
+/bin/zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如果没有就用<code>vim /etc/shells</code>加上；如果有，就执行下一命令使zsh生效：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">chsh -s /usr/local/bin/zsh
 或者
-chsh -s /bin/zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li><li><p>安装oh-my-zsh</p><p>安装oh-my-zsh需要使用git工具，先安装git:</p><pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在执行以下代码：（如果失效，可以去查看<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">oh-my-zsh</a>开源项目）</p><p>via curl</p><pre class="line-numbers language-bash"><code class="language-bash">sh -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>via wget</p><pre class="line-numbers language-bash"><code class="language-bash">sh -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>最终效果如图：</p><p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2018.34.21.png" alt="oh-my-zsh"></p></li><li><p>关于配置文件</p><p>默认Shell的<del>/.bashrc文件默认不再加载了，替代的是</del>/.zlogin和~/.zshrc。</p></li></ol><h2 id="配置Mac终端iTerm2（powerlevel9k）"><a href="#配置Mac终端iTerm2（powerlevel9k）" class="headerlink" title="配置Mac终端iTerm2（powerlevel9k）"></a>配置Mac终端iTerm2（powerlevel9k）</h2><p>经过以上配置已经很完美了<br>现在缺少一个很漂亮的主题</p><p>首先创建一个暂存文件夹,然后进入这个文件夹，在克隆iTerm2的配色方案，依次执行以下三行代码：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> tmp
+chsh -s /bin/zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>安装oh-my-zsh</p>
+<p>安装oh-my-zsh需要使用git工具，先安装git:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在执行以下代码：（如果失效，可以去查看<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">oh-my-zsh</a>开源项目）</p>
+<p>via curl</p>
+<pre class="line-numbers language-bash"><code class="language-bash">sh -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>via wget</p>
+<pre class="line-numbers language-bash"><code class="language-bash">sh -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>最终效果如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2018.34.21.png" alt="oh-my-zsh"></p>
+</li>
+<li><p>关于配置文件</p>
+<p>默认Shell的<del>/.bashrc文件默认不再加载了，替代的是</del>/.zlogin和~/.zshrc。</p>
+</li>
+</ol>
+<h2 id="配置Mac终端iTerm2（powerlevel9k）"><a href="#配置Mac终端iTerm2（powerlevel9k）" class="headerlink" title="配置Mac终端iTerm2（powerlevel9k）"></a>配置Mac终端iTerm2（powerlevel9k）</h2><p>经过以上配置已经很完美了<br>现在缺少一个很漂亮的主题</p>
+<p>首先创建一个暂存文件夹,然后进入这个文件夹，在克隆iTerm2的配色方案，依次执行以下三行代码：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> tmp
 <span class="token function">cd</span> tmp
-<span class="token function">git</span> clone https://github.com/MartinSeeler/iterm2-material-design.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>然后在该目录双击’<code>material-design-colors.itermcolors</code>‘文件，点确定！<br>然后rm -rf删库跑路(tmp)</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> <span class="token punctuation">..</span>
-<span class="token function">rm</span> -rf tmp/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>打开iTerm2 <code>command+,</code> 打开设置-&gt;Profiles-&gt;Colors-&gt;Color Presets-&gt;material-design-colors-&gt;command+W</p><p>安装powerlevel9k：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改 ~/.zshrc 配置文件，配置该主题</p><pre class="line-numbers language-bash"><code class="language-bash">vim ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在里面设置主题</p><pre class="line-numbers language-bash"><code class="language-bash">ZSH_THEME<span class="token operator">=</span><span class="token string">"powerlevel9k/powerlevel9k"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>重启终端，会发现有些字符显示乱码</p><p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2021.31.47.png" alt="Terminal"></p><p>这时候需要安装<a href="https://github.com/ryanoasis/nerd-fonts" target="_blank" rel="noopener">Nerd</a>字体</p><p>安装可能很慢可以使用以下安装命令：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~/Library/Fonts <span class="token operator">&amp;&amp;</span> curl -fLo <span class="token string">"Droid Sans Mono for Powerline Nerd Font Complete.otf"</span> https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装完字体后更改iTerm2终端字体 搜索nerd选择就行了<br>安装成功后就是这样的：<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2022.26.34.png" alt="Terminal"></p><p>接下来配置powerlevel9k主题</p><pre class="line-numbers language-bash"><code class="language-bash">vim ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在主题<code>ZSH_THEME=xxxxxxx</code>前面加上</p><pre class="line-numbers language-bash"><code class="language-bash">POWERLEVEL9K_MODE<span class="token operator">=</span><span class="token string">"nerdfont-complete"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在最后添加以下内容：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ================= powerlevel9k Settings =================</span>
+<span class="token function">git</span> clone https://github.com/MartinSeeler/iterm2-material-design.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>然后在该目录双击’<code>material-design-colors.itermcolors</code>‘文件，点确定！<br>然后rm -rf删库跑路(tmp)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> <span class="token punctuation">..</span>
+<span class="token function">rm</span> -rf tmp/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>打开iTerm2 <code>command+,</code> 打开设置-&gt;Profiles-&gt;Colors-&gt;Color Presets-&gt;material-design-colors-&gt;command+W</p>
+<p>安装powerlevel9k：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改 ~/.zshrc 配置文件，配置该主题</p>
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在里面设置主题</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ZSH_THEME<span class="token operator">=</span><span class="token string">"powerlevel9k/powerlevel9k"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重启终端，会发现有些字符显示乱码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2021.31.47.png" alt="Terminal"></p>
+<p>这时候需要安装<a href="https://github.com/ryanoasis/nerd-fonts" target="_blank" rel="noopener">Nerd</a>字体</p>
+<p>安装可能很慢可以使用以下安装命令：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~/Library/Fonts <span class="token operator">&amp;&amp;</span> curl -fLo <span class="token string">"Droid Sans Mono for Powerline Nerd Font Complete.otf"</span> https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装完字体后更改iTerm2终端字体 搜索nerd选择就行了<br>安装成功后就是这样的：<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2022.26.34.png" alt="Terminal"></p>
+<p>接下来配置powerlevel9k主题</p>
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在主题<code>ZSH_THEME=xxxxxxx</code>前面加上</p>
+<pre class="line-numbers language-bash"><code class="language-bash">POWERLEVEL9K_MODE<span class="token operator">=</span><span class="token string">"nerdfont-complete"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在最后添加以下内容：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ================= powerlevel9k Settings =================</span>
 <span class="token comment" spellcheck="true"># Please only use this battery segment if you have material icons in your nerd font (or font)</span>
 <span class="token comment" spellcheck="true"># Otherwise, use the font awesome one in "User Segments"</span>
 
@@ -55,19 +550,251 @@ POWERLEVEL9K_CUSTOM_BATTERY_STATUS<span class="token operator">=</span><span cla
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS<span class="token operator">=</span><span class="token punctuation">(</span>context os_icon custom_internet_signal custom_battery_status_joined <span class="token function">ssh</span> root_indicator <span class="token function">dir</span> dir_writable vcs<span class="token punctuation">)</span>
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS<span class="token operator">=</span><span class="token punctuation">(</span>command_execution_time  status  time<span class="token punctuation">)</span>
 HIST_STAMPS<span class="token operator">=</span><span class="token string">"mm/dd/yyyy"</span>
-DISABLE_UPDATE_PROMPT<span class="token operator">=</span>true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>最终显示效果：</p><p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2022.58.28.png" alt="terminal"></p><h2 id="再安装两个插件："><a href="#再安装两个插件：" class="headerlink" title="再安装两个插件："></a>再安装两个插件：</h2><p>安装 autosuggestions（自动提示）</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="token variable">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装 syntax-highlighting（动态高亮）</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="token variable">${ZSH_CUSTOM:-~/.oh-my-zsh/custom}</span>/plugins/zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在配置文件里启用插件：<br><code>vim ~/.zshrc</code></p><pre class="line-numbers language-bash"><code class="language-bash">plugins<span class="token operator">=</span><span class="token punctuation">(</span>
+DISABLE_UPDATE_PROMPT<span class="token operator">=</span>true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最终显示效果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/19-3-5-terminal-images/2019-03-05%2022.58.28.png" alt="terminal"></p>
+<h2 id="再安装两个插件："><a href="#再安装两个插件：" class="headerlink" title="再安装两个插件："></a>再安装两个插件：</h2><p>安装 autosuggestions（自动提示）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="token variable">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装 syntax-highlighting（动态高亮）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="token variable">${ZSH_CUSTOM:-~/.oh-my-zsh/custom}</span>/plugins/zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在配置文件里启用插件：<br><code>vim ~/.zshrc</code></p>
+<pre class="line-numbers language-bash"><code class="language-bash">plugins<span class="token operator">=</span><span class="token punctuation">(</span>
     <span class="token function">git</span>
     zsh-autosuggestions
     zsh-syntax-highlighting
 <span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 注意：zsh-syntax-highlighting 必须放在最后面（官方推荐）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="https://blog.sky03.cn" rel="external nofollow noreferrer">Sky03</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://blog.sky03.cn/2019/33696.html">https://blog.sky03.cn/2019/33696.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.sky03.cn" target="_blank">Sky03</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+<span class="token comment" spellcheck="true"># 注意：zsh-syntax-highlighting 必须放在最后面（官方推荐）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.sky03.cn" rel="external nofollow noreferrer">Sky03</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.sky03.cn/2019/33696.html">https://blog.sky03.cn/2019/33696.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.sky03.cn" target="_blank">Sky03</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/教程/"><span class="chip bg-color">教程</span></a> <a href="/tags/Mac/"><span class="chip bg-color">Mac</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/share/css/share.min.css"><div id="article-share"></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/gitalk/gitalk.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/my-gitalk.css"><div class="card gitalk-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="gitalk-container" class="card-content"></div></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/gitalk/gitalk.min.js"></script><script>let gitalk = new Gitalk({
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/教程/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/Mac/">
+                                    <span class="chip bg-color">Mac</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
         clientID: '5010de82c59a66d71db9',
         clientSecret: '9eb212e068833e867f1cfae3dd4855b8520be712',
         repo: 'Sky03-Blog-Background',
@@ -78,7 +805,150 @@ DISABLE_UPDATE_PROMPT<span class="token operator">=</span>true<span aria-hidden=
         distractionFreeMode: false,  // Facebook-like distraction free mode
     });
 
-    gitalk.render('gitalk-container');</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/2019/41882.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="Hexo安装教程"> <span class="card-title">Hexo安装教程</span></div></a><div class="card-content article-content"><div class="summary block-with-text">本项目基于macOS（Windows也同样适用） 0. 前言使用github pages服务搭建博客的好处有： 全是静态文件，访问速度快； 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台； 可以随意绑</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2019-03-07</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/教程/" class="post-category">教程</a> <a href="/categories/教程/Hexo/" class="post-category">Hexo</a></span></div></div><div class="card-action article-tags"><a href="/tags/教程/"><span class="chip bg-color">教程</span></a> <a href="/tags/Hexo/"><span class="chip bg-color">Hexo</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/2019/26879.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Java之注解"> <span class="card-title">Java之注解</span></div></a><div class="card-content article-content"><div class="summary block-with-text">注解 概念：说明程序的，给计算机看的 作用分类： 编写文档：通过代码里标识的注解生成文档【生成doc文档】 代码分析：通过代码里标识的注解对代码进行分析【使用注解】 编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Overri</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2019-02-19</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Java/" class="post-category">Java</a></span></div></div><div class="card-action article-tags"><a href="/tags/Java基础/"><span class="chip bg-color">Java基础</span></a></div></div></div></div></article></div><script>$('#articleContent').on('copy', function (e) {
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/41882.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="Hexo安装教程">
+                        
+                        <span class="card-title">Hexo安装教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+本项目基于macOS（Windows也同样适用）
+
+0. 前言使用github pages服务搭建博客的好处有：
+
+
+全是静态文件，访问速度快；
+
+免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；
+
+可以随意绑
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/教程/" class="post-category">
+                                    教程
+                                </a>
+                            
+                            <a href="/categories/教程/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/教程/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/26879.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Java之注解">
+                        
+                        <span class="card-title">Java之注解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            注解
+概念：说明程序的，给计算机看的
+作用分类：
+编写文档：通过代码里标识的注解生成文档【生成doc文档】
+代码分析：通过代码里标识的注解对代码进行分析【使用注解】
+编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Overri
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java基础/">
+                        <span class="chip bg-color">Java基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
         // IE8 or earlier browser is 'undefined'
         if (typeof window.getSelection === 'undefined') return;
 
@@ -111,7 +981,55 @@ DISABLE_UPDATE_PROMPT<span class="token operator">=</span>true<span aria-hidden=
 
         selection.selectAllChildren(newdiv);
         window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });</script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeBlockFuction.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeLang.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeCopy.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -182,4 +1100,225 @@ DISABLE_UPDATE_PROMPT<span class="token operator">=</span>true<span aria-hidden=
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">年份</span> &nbsp;by&nbsp; <a href="https://blog.sky03.cn" target="_blank">Sky03</a><br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">72.4k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="sitetime">载入运行时间...</span><script>function siteTime(){window.setTimeout("siteTime()",1e3);var e=36e5,t=24*e,n=new Date,o="2018",i=n.getFullYear(),r=n.getMonth()+1,a=n.getDate(),m=n.getHours(),l=n.getMinutes(),M=n.getSeconds(),d=Date.UTC(o,"11","12","0","0","0"),g=Date.UTC(i,r,a,m,l,M)-d,s=Math.floor(g/31536e6),T=Math.floor(g/t-365*s),u=Math.floor((g-(365*s+T)*t)/e),c=Math.floor((g-(365*s+T)*t-u*e)/6e4),f=Math.floor((g-(365*s+T)*t-u*e-6e4*c)/1e3);o==i?(document.getElementById("year").innerHTML=i,document.getElementById("sitetime").innerHTML="本站已勉强运行 "+T+" 天 "+u+" 小时 "+c+" 分钟 "+f+" 秒"):(document.getElementById("year").innerHTML=o+" - "+i,document.getElementById("sitetime").innerHTML="本站已勉强运行 "+s+" 年 "+T+" 天 "+u+" 小时 "+c+" 分钟 "+f+" 秒")}setInterval(siteTime,1e3)</script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/skyls03" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:skyls03@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=946523579" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 946523579" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a> <a href="https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" data-position="top" data-delay="50"><i class="fab fa-zhihu1">知</i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/search.js"></script><script>$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/matery.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?02ee3ea6dba8039d1ecb21d3d6f253cb";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/others/clicklove.js" async></script><script async src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/background/ribbon-dynamic.js" async></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/instantpage/instantpage.js" type="module"></script><script>window.$crisp=[],window.CRISP_WEBSITE_ID="ace4111a-6f1a-4fb2-9ff3-e96a20275ac8",d=document,s=d.createElement("script"),s.src="https://client.crisp.chat/l.js",s.async=1,d.getElementsByTagName("head")[0].appendChild(s)</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)0<=(t=c[r].getBoundingClientRect()).top&&0<=t.left&&t.top<=(e.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n()},e.src=i}();var t}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this)</script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            &nbsp;by&nbsp;
+            <a href="https://blog.sky03.cn" target="_blank">Sky03</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">72.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "11";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/skyls03" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:skyls03@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=946523579" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 946523579" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?02ee3ea6dba8039d1ecb21d3d6f253cb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script> 
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="ace4111a-6f1a-4fb2-9ff3-e96a20275ac8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

@@ -17,34 +17,6 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客建站日志</title>
-    <link href="https://blog.sky03.cn/2019/9763.html"/>
-    <id>https://blog.sky03.cn/2019/9763.html</id>
-    <published>2019-11-14T04:46:24.000Z</published>
-    <updated>2019-11-14T04:46:24.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;2018年11月12号建站&quot;&gt;&lt;a href=&quot;#2018年11月12号建站&quot; class=&quot;headerlink&quot; title=&quot;2018年11月12号建站&quot;&gt;&lt;/a&gt;2018年11月12号建站&lt;/h2&gt;&lt;p&gt;采用NexT主题&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://blog.sky03.cn/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://blog.sky03.cn/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo博客优化</title>
     <link href="https://blog.sky03.cn/2019/42790.html"/>
     <id>https://blog.sky03.cn/2019/42790.html</id>
@@ -57,7 +29,7 @@
       
         
         
-          &lt;h2 id=&quot;npm下载优化&quot;&gt;&lt;a href=&quot;#npm下载优化&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;npm速度优化&quot;&gt;&lt;a href=&quot;#npm速度优化&quot; class=&quot;headerlink&quot;
         
       
     
@@ -600,6 +572,33 @@
       <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="Mac" scheme="https://blog.sky03.cn/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之注解</title>
+    <link href="https://blog.sky03.cn/2019/26879.html"/>
+    <id>https://blog.sky03.cn/2019/26879.html</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-04-26T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;注解&quot;&gt;&lt;a href=&quot;#注解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.sky03.cn/categories/Java/"/>
+    
+    
+      <category term="Java基础" scheme="https://blog.sky03.cn/tags/Java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
