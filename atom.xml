@@ -44,7 +44,7 @@
   </entry>
   
   <entry>
-    <title>超好用的软件或插件集合</title>
+    <title>超好用的软件插件网站集合</title>
     <link href="https://blog.sky03.cn/2019/4873.html"/>
     <id>https://blog.sky03.cn/2019/4873.html</id>
     <published>2019-10-30T16:00:00.000Z</published>
@@ -514,9 +514,9 @@
       <category term="Hexo" scheme="https://blog.sky03.cn/categories/%E6%95%99%E7%A8%8B/Hexo/"/>
     
     
-      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Hexo" scheme="https://blog.sky03.cn/tags/Hexo/"/>
+    
+      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
