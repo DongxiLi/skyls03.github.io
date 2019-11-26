@@ -42,7 +42,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">Sky03's Blog</span>
                     </div>
@@ -141,7 +141,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Sky03's Blog</div>
         <div class="logo-desc">
@@ -316,7 +316,7 @@
     }
 
     #toc-content .toc-link:hover {
-        color: #42b983;
+        color: rgba(132, 163, 247, 0.952);
         font-weight: 700;
         text-decoration: underline;
     }
@@ -327,11 +327,11 @@
     }
 
     #toc-content .is-active-link {
-        color: #42b983;
+        color: #6190e8;
     }
 
     #toc-content .is-active-link::before {
-        background-color: #42b983;
+        background-color: #f459f7;
     }
 
     #floating-toc-btn {
@@ -477,7 +477,7 @@ DEFAULT TABLESPACE "sky03"<span aria-hidden="true" class="line-numbers-rows"><sp
 <p>创建的用户名为<code>sky03</code>，登录时填写用户名就必须为<code>&quot;sky03&quot;</code>，不然就会提示<code>用户名/口令无效</code>，如果用户名为<code>SKY03</code>，登录时就可以直接填写<code>SKY03或者sky03</code>，密码是区分大小写的！</p>
 <p><strong>密码为特殊字符时，创建用户时密码需要加双引号，登陆时也需要把密码用双引号括起来。</strong></p>
 <h3 id="给用户分配角色"><a href="#给用户分配角色" class="headerlink" title="给用户分配角色"></a>给用户分配角色</h3><p>新创建的用户没有角色身份，登陆后会提示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/20190421133134.png" alt></p>
+<p><img src="/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/20190421133134.png" alt></p>
 <p>Oracle 中已存在三个重要的角色：connect 角色，resource 角色，dba 角色。</p>
 <ul>
 <li><p>CONNECT 角色： –是授予最终用户的典型权利，最基本的 </p>
@@ -764,7 +764,7 @@ select e.ename,
                  end
 from emp e;
 -- 结果：emp表的员工名前三个会自动改掉，其他的走else<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230827.PNG" alt="Oracle"></p>
+<p><img src="/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230827.PNG" alt="Oracle"></p>
 <ul>
 <li>用法二：</li>
 </ul>
@@ -781,7 +781,7 @@ from emp e;
 -- 结果：没有指定名字的，全部变成null值
 -- 一般可以用于批量将记录的某字段变为null值
 -- 其实这里的when后相当于 e.ename='SMITH' <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230837.PNG" alt="Oracle"></p>
+<p><img src="/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230837.PNG" alt="Oracle"></p>
 <ul>
 <li>用法三：</li>
 </ul>
@@ -795,7 +795,7 @@ select e.sal,
                else '低收入'
                  end
 from emp e;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230844.PNG" alt="Oracle"></p>
+<p><img src="/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230844.PNG" alt="Oracle"></p>
 </li>
 <li><p><code>decode()</code>  Oracle专用表达式，作用和 <code>when then</code> 一样</p>
 <pre class="line-numbers language-plsql"><code class="language-plsql">----oracle专用条件表达式
@@ -808,7 +808,7 @@ select e.ename,
                 '无名') "中文名"   --双引号可以去掉，但是不能用单引号
 
 from emp e;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230857.PNG" alt></p>
+<p><img src="/medias/loading.gif" data-original="https://sky03-blog-images.oss-cn-beijing.aliyuncs.com/blog-img/201904230857.PNG" alt></p>
 </li>
 <li><p>我们开发人员讲究代码可重用，最好使用通用函数，MySQL和Oracle都能用！</p>
 </li>
@@ -1337,10 +1337,10 @@ end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1406,7 +1406,7 @@ end;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="Mybatis">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io//medias/featureimages/5.jpg" class="responsive-img" alt="Mybatis">
                         
                         <span class="card-title">Mybatis</span>
                     </div>
@@ -1468,7 +1468,7 @@ mybatis
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="Maven">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io//medias/featureimages/11.jpg" class="responsive-img" alt="Maven">
                         
                         <span class="card-title">Maven</span>
                     </div>
@@ -1753,6 +1753,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备19042307号</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
