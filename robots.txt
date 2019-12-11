@@ -1,10 +1,8 @@
 User-agent: *
 Allow: /
-Allow: /about/
-Allow: /archives/
-Allow: /categories/
-Allow: /2018/
-Allow: /2019/
+Allow: /posts/
+Disallow: /about/
+Disallow: /archives/
 Disallow: /js/
 Disallow: /css/
 Disallow: /contact/
@@ -14,3 +12,4 @@ Disallow: /libs/
 Disallow: /medias/
 Disallow: /page/
 Disallow: /tags/
+Disallow: /categories/
