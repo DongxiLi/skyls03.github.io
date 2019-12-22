@@ -1,4 +1,11 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="keywords" content="Java之IO流, Sky03"><meta name="description" content="文件对象文件和文件夹都是用File代表
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java之IO流, Sky03">
+    <meta name="description" content="文件对象文件和文件夹都是用File代表
 创建文件对象使用绝对路径或者相对路径创建File对象
 
 其中使用的方法有：
@@ -6,7 +13,451 @@
 f1.getAbsolutePath()用于获取f1文件对象的绝对路径
 package file;
 
-import jav"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Java之IO流 | Sky03&#39;s Blog</title><link rel="icon" type="image/png" href="/medias/logo.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/awesome/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/aos/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/animate/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/matery.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/my.css"><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/jquery/jquery.min.js"></script><link rel="alternate" href="/atom.xml" title="Sky03's Blog" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-material-oceanic.css"><link rel="stylesheet" href="/css/prism-line-numbers.css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper head-container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">Sky03's Blog</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="https://docs.sky03.cn" class="waves-effect waves-light"><i class="fa fa-book" style="zoom:.6"></i> <span>文档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags/" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories/" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives/" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends/" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友链</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/contact/" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>留言</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about/" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">Sky03's Blog</div><div class="logo-desc">Never really desperate, only the lost of the soul.</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="https://docs.sky03.cn" class="waves-effect waves-light"><i class="fa-fw fa fa-book"></i> 文档</a></li><li class="m-nav-item"><a href="/tags/" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories/" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives/" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/friends/" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友链</a></li><li class="m-nav-item"><a href="/contact/" class="waves-effect waves-light"><i class="fa-fw fas fa-comments"></i> 留言</a></li><li class="m-nav-item"><a href="/about/" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li></ul></div></div></nav></header><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/10.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">Java之IO流</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:rgba(132,163,247,.952);font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#6190e8}#toc-content .is-active-link::before{background-color:#f459f7}#floating-toc-btn{position:fixed;right:32px;bottom:155px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/Java-基础/"><span class="chip bg-color">Java-基础</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Java-基础/" class="post-category">Java-基础</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布于:&nbsp;&nbsp; 2018-12-23</div><div class="post-date info-break-policy"><i class="far fa-calendar-check fa-fw"></i> 更新于:&nbsp;&nbsp; 2019-04-27</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 5.2k</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="文件对象"><a href="#文件对象" class="headerlink" title="文件对象"></a>文件对象</h2><p><strong>文件和文件夹都是用File代表</strong></p><h3 id="创建文件对象"><a href="#创建文件对象" class="headerlink" title="创建文件对象"></a>创建文件对象</h3><p>使用绝对路径或者相对路径创建File对象</p><ul><li><p>其中使用的方法有：</p><ul><li><p>f1.<code>getAbsolutePath()</code>用于获取f1文件对象的绝对路径</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> file<span class="token punctuation">;</span>
+import jav">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Java之IO流 | Sky03&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="alternate" href="/atom.xml" title="Sky03's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">Sky03's Blog</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://docs.sky03.cn" class="waves-effect waves-light">
+      
+      <i class="fa fa-book" style="zoom: 0.6;"></i>
+      
+      <span>文档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags/" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives/" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends/" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact/" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about/" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Sky03's Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://docs.sky03.cn" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-book"></i>
+			
+			文档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java之IO流</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: rgba(132, 163, 247, 0.952);
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #6190e8;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #f459f7;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 32px;
+        bottom: 155px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java-基础/">
+                                <span class="chip bg-color">Java-基础</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java-基础/" class="post-category">
+                                Java-基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布于:&nbsp;&nbsp;
+                    2018-12-23
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新于:&nbsp;&nbsp;
+                    2019-04-27
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.2k
+                </div>
+                
+
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="文件对象"><a href="#文件对象" class="headerlink" title="文件对象"></a>文件对象</h2><p><strong>文件和文件夹都是用File代表</strong></p>
+<h3 id="创建文件对象"><a href="#创建文件对象" class="headerlink" title="创建文件对象"></a>创建文件对象</h3><p>使用绝对路径或者相对路径创建File对象</p>
+<ul>
+<li><p>其中使用的方法有：</p>
+<ul>
+<li><p>f1.<code>getAbsolutePath()</code>用于获取f1文件对象的绝对路径</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> file<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 
@@ -25,11 +476,38 @@ import jav"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="vie
 
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"f3的绝对路径："</span> <span class="token operator">+</span> f3<span class="token punctuation">.</span><span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="文件常用方法1"><a href="#文件常用方法1" class="headerlink" title="文件常用方法1"></a>文件常用方法1</h3></li></ul></li></ul><p><strong>以下方法都可以用文件对象<code>f.xxx()</code>的形式去直接调用：</strong></p><ul><li><code>File.separator</code>代表路径的分割符“/”(Unix)或“\”(window)</li><li>判断是否存在：<code>f.exists()</code> //exist存在</li><li>判断是否是文件夹：<code>f.isDirectory()</code></li><li>判断是否是文件：<code>f.isFile()</code></li><li>获取文件的长度：<code>f.length()</code></li><li>文件的最后修改时间：<code>f.lastModified()</code><ul><li>拓展：<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">long</span> time <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">lastModified</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文件常用方法1"><a href="#文件常用方法1" class="headerlink" title="文件常用方法1"></a>文件常用方法1</h3></li>
+</ul>
+</li>
+</ul>
+<p><strong>以下方法都可以用文件对象<code>f.xxx()</code>的形式去直接调用：</strong></p>
+<ul>
+<li><code>File.separator</code>代表路径的分割符“/”(Unix)或“\”(window)</li>
+<li>判断是否存在：<code>f.exists()</code>  //exist存在</li>
+<li>判断是否是文件夹：<code>f.isDirectory()</code></li>
+<li>判断是否是文件：<code>f.isFile()</code></li>
+<li>获取文件的长度：<code>f.length()</code></li>
+<li>文件的最后修改时间：<code>f.lastModified()</code><ul>
+<li>拓展：<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">long</span> time <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">lastModified</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 Date d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"获取文件的最后修改时间："</span><span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li></ul></li><li>设置文件修改时间为1970.1.1 08:00:00<ul><li><code>f.setLastModified(0)</code> //（这里参数，填毫秒）</li></ul></li><li>文件重命名<pre class="line-numbers language-java"><code class="language-java">File f1 <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"d:/LOLFolder/300Hero.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"获取文件的最后修改时间："</span><span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>设置文件修改时间为1970.1.1 08:00:00<ul>
+<li><code>f.setLastModified(0)</code>  //（这里参数，填毫秒）</li>
+</ul>
+</li>
+<li>文件重命名<pre class="line-numbers language-java"><code class="language-java">File f1 <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"d:/LOLFolder/300Hero.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 File f2 <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"d:/LOLFolder/DOTA.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>f<span class="token punctuation">.</span><span class="token function">renameTo</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"把300Hero.exe改名成了DOTA.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>substantial<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ul><li><strong>注意：</strong> renameTo方法用于对物理文件名称进行修改，但是并不会修改File对象的name属性。</li></ul></li></ul><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"把300Hero.exe改名成了DOTA.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>substantial<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>注意：</strong> renameTo方法用于对物理文件名称进行修改，但是并不会修改File对象的name属性。</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
@@ -54,7 +532,52 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="文件常用方法2"><a href="#文件常用方法2" class="headerlink" title="文件常用方法2"></a>文件常用方法2</h3><p><strong>以下方法都可以用文件对象<code>f.xxx()</code>的形式去直接调用：</strong></p><ul><li>以字符串数组的形式，返回当前文件夹下的所有文件（不包含子文件及子文件夹）<ul><li><code>f.list()</code></li></ul></li><li>以文件数组的形式，返回当前文件夹下的所有文件（不包含子文件及子文件夹）<ul><li><code>File[]fs= f.listFiles()</code></li></ul></li><li>以字符串形式返回获取所在文件夹<ul><li><code>f.getParent()</code></li></ul></li><li>创建文件夹，如果父文件夹不存在，创建就无效<ul><li><code>f.mkdir()</code></li></ul></li><li>创建文件夹，如果父文件夹不存在，就会创建父文件夹<ul><li><code>f.mkdirs()</code></li></ul></li><li>创建一个空文件,如果父文件夹不存在，就会抛出异常<ul><li><code>f.createNewFile()</code></li></ul></li><li>所以创建一个空文件之前，通常都会创建父目录<ul><li><code>f.getParentFile().mkdirs()</code></li></ul></li><li>列出所有的盘符c: d: e: 等等<ul><li><code>f.listRoots()</code></li></ul></li><li>删除文件<ul><li><code>f.delete()</code></li></ul></li><li>JVM结束的时候，刪除文件，常用于临时文件的删除<ul><li><code>f.deleteOnExit()</code></li></ul></li></ul><p>查找文件算法：</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文件常用方法2"><a href="#文件常用方法2" class="headerlink" title="文件常用方法2"></a>文件常用方法2</h3><p><strong>以下方法都可以用文件对象<code>f.xxx()</code>的形式去直接调用：</strong>  </p>
+<ul>
+<li>以字符串数组的形式，返回当前文件夹下的所有文件（不包含子文件及子文件夹）<ul>
+<li><code>f.list()</code></li>
+</ul>
+</li>
+<li>以文件数组的形式，返回当前文件夹下的所有文件（不包含子文件及子文件夹）<ul>
+<li><code>File[]fs= f.listFiles()</code></li>
+</ul>
+</li>
+<li>以字符串形式返回获取所在文件夹<ul>
+<li><code>f.getParent()</code></li>
+</ul>
+</li>
+<li>创建文件夹，如果父文件夹不存在，创建就无效<ul>
+<li><code>f.mkdir()</code></li>
+</ul>
+</li>
+<li>创建文件夹，如果父文件夹不存在，就会创建父文件夹<ul>
+<li><code>f.mkdirs()</code></li>
+</ul>
+</li>
+<li>创建一个空文件,如果父文件夹不存在，就会抛出异常<ul>
+<li><code>f.createNewFile()</code></li>
+</ul>
+</li>
+<li>所以创建一个空文件之前，通常都会创建父目录<ul>
+<li><code>f.getParentFile().mkdirs()</code></li>
+</ul>
+</li>
+<li>列出所有的盘符c: d: e: 等等<ul>
+<li><code>f.listRoots()</code></li>
+</ul>
+</li>
+<li>删除文件<ul>
+<li><code>f.delete()</code></li>
+</ul>
+</li>
+<li>JVM结束的时候，刪除文件，常用于临时文件的删除<ul>
+<li><code>f.deleteOnExit()</code></li>
+</ul>
+</li>
+</ul>
+<p>查找文件算法：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileDemo</span> <span class="token punctuation">{</span>
 
@@ -83,7 +606,15 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="什么是流"><a href="#什么是流" class="headerlink" title="什么是流"></a>什么是流</h2><p>当不同的介质之间有数据交互的时候，JAVA就使用流来实现。<br></p><p>数据源可以是文件，还可以是数据库，网络甚至是其他的程序</p><h3 id="文件输入流"><a href="#文件输入流" class="headerlink" title="文件输入流"></a>文件输入流</h3><blockquote><p>什么是流(Stream)，流就是一系列的数据</p></blockquote><p>如下代码，就建立了一个文件输入流，这个流可以用来把数据从硬盘的文件，读取到JVM(内存)。</p><p>目前代码只是建立了流，还没有开始读取</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="什么是流"><a href="#什么是流" class="headerlink" title="什么是流"></a>什么是流</h2><p>当不同的介质之间有数据交互的时候，JAVA就使用流来实现。<br></p>
+<p>数据源可以是文件，还可以是数据库，网络甚至是其他的程序</p>
+<h3 id="文件输入流"><a href="#文件输入流" class="headerlink" title="文件输入流"></a>文件输入流</h3><blockquote>
+<p>什么是流(Stream)，流就是一系列的数据</p>
+</blockquote>
+<p>如下代码，就建立了一个文件输入流，这个流可以用来把数据从硬盘的文件，读取到JVM(内存)。</p>
+<p>目前代码只是建立了流，还没有开始读取</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -104,7 +635,14 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><blockquote><p>InputStream字节输入流</p><p>OutputStream字节输出流</p><p>用于以字节的形式读取和写入数据</p></blockquote><h3 id="以字节流的形式向文件写入数据"><a href="#以字节流的形式向文件写入数据" class="headerlink" title="以字节流的形式向文件写入数据"></a>以字节流的形式向文件写入数据</h3><p>InputStream是字节输入流，同时也是抽象类，只提供方法声明，不提供方法的具体实现。<br>FileInputStream 是InputStream子类，以FileInputStream 为例进行文件读取</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><blockquote>
+<p>InputStream字节输入流  </p>
+<p>OutputStream字节输出流  </p>
+<p>用于以字节的形式读取和写入数据  </p>
+</blockquote>
+<h3 id="以字节流的形式向文件写入数据"><a href="#以字节流的形式向文件写入数据" class="headerlink" title="以字节流的形式向文件写入数据"></a>以字节流的形式向文件写入数据</h3><p>InputStream是字节输入流，同时也是抽象类，只提供方法声明，不提供方法的具体实现。<br>FileInputStream 是InputStream子类，以FileInputStream 为例进行文件读取  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -135,7 +673,10 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="以字节流的形式向文件写入数据-1"><a href="#以字节流的形式向文件写入数据-1" class="headerlink" title="以字节流的形式向文件写入数据"></a>以字节流的形式向文件写入数据</h3><p>OutputStream是字节输出流，同时也是抽象类，只提供方法声明，不提供方法的具体实现。<br>FileOutputStream 是OutputStream子类，以<code>FileOutputStream</code> 为例向文件写出数据</p><p>注: 如果文件d:/lol2.txt不存在，写出操作会自动创建该文件。<br>但是如果是文件 d:/xyz/lol2.txt，而目录xyz又不存在，会抛出异常</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="以字节流的形式向文件写入数据-1"><a href="#以字节流的形式向文件写入数据-1" class="headerlink" title="以字节流的形式向文件写入数据"></a>以字节流的形式向文件写入数据</h3><p>OutputStream是字节输出流，同时也是抽象类，只提供方法声明，不提供方法的具体实现。<br>FileOutputStream 是OutputStream子类，以<code>FileOutputStream</code> 为例向文件写出数据   </p>
+<p>注: 如果文件d:/lol2.txt不存在，写出操作会自动创建该文件。<br>但是如果是文件 d:/xyz/lol2.txt，而目录xyz又不存在，会抛出异常  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileOutputStream<span class="token punctuation">;</span>
@@ -163,7 +704,12 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p><strong>小细节：写文件时如果父目录不存在，可以先使用mkdirs创建父目录</strong></p><p><strong>如果父目录存在，这样也不会报错！</strong></p></blockquote><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>小细节：写文件时如果父目录不存在，可以先使用mkdirs创建父目录</strong></p>
+<p><strong>如果父目录存在，这样也不会报错！</strong></p>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileOutputStream<span class="token punctuation">;</span>
@@ -198,7 +744,10 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="关闭流的方式"><a href="#关闭流的方式" class="headerlink" title="关闭流的方式"></a>关闭流的方式</h3><p>所有的流，无论是输入流还是输出流，使用完毕之后，都应该关闭。 如果不关闭，会产生对资源占用的浪费。 当量比较大的时候，会影响到业务的正常开展。</p><h4 id="在try中关闭"><a href="#在try中关闭" class="headerlink" title="在try中关闭"></a>在try中关闭</h4><p>在try的作用域里关闭文件输入流，在前面的示例中都是使用这种方式，这样做有一个弊端；<br>如果文件不存在，或者读取的时候出现问题而抛出异常，那么就不会执行这一行关闭流的代码，存在巨大的资源占用隐患。 <code>不推荐</code>使用</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="关闭流的方式"><a href="#关闭流的方式" class="headerlink" title="关闭流的方式"></a>关闭流的方式</h3><p>所有的流，无论是输入流还是输出流，使用完毕之后，都应该关闭。 如果不关闭，会产生对资源占用的浪费。 当量比较大的时候，会影响到业务的正常开展。</p>
+<h4 id="在try中关闭"><a href="#在try中关闭" class="headerlink" title="在try中关闭"></a>在try中关闭</h4><p>在try的作用域里关闭文件输入流，在前面的示例中都是使用这种方式，这样做有一个弊端；<br>如果文件不存在，或者读取的时候出现问题而抛出异常，那么就不会执行这一行关闭流的代码，存在巨大的资源占用隐患。 <code>不推荐</code>使用</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -222,7 +771,15 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="在finally中关闭"><a href="#在finally中关闭" class="headerlink" title="在finally中关闭"></a>在finally中关闭</h4><p>这是标准的关闭流的方式</p><ol><li>首先把流的引用声明在try的外面，如果声明在try里面，其作用域无法抵达finally.</li><li>在finally关闭之前，要先判断该引用是否为空</li><li>关闭的时候，需要再一次进行try catch处理</li></ol><p>这是标准的严谨的关闭流的方式，但是看上去很繁琐，所以写不重要的或者测试代码的时候，都会采用上面的<code>有隐患</code>try的方式，因为不麻烦~</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="在finally中关闭"><a href="#在finally中关闭" class="headerlink" title="在finally中关闭"></a>在finally中关闭</h4><p>这是标准的关闭流的方式</p>
+<ol>
+<li>首先把流的引用声明在try的外面，如果声明在try里面，其作用域无法抵达finally.</li>
+<li>在finally关闭之前，要先判断该引用是否为空</li>
+<li>关闭的时候，需要再一次进行try catch处理</li>
+</ol>
+<p>这是标准的严谨的关闭流的方式，但是看上去很繁琐，所以写不重要的或者测试代码的时候，都会采用上面的<code>有隐患</code>try的方式，因为不麻烦~</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -256,7 +813,10 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="使用try-的方式"><a href="#使用try-的方式" class="headerlink" title="使用try()的方式"></a>使用try()的方式</h4><p>把流定义在try()里,try,catch或者finally结束的时候，会自动关闭<br>这种编写代码的方式叫做 try-with-resources， 这是从JDK7开始支持的技术</p><p>所有的流，都实现了一个接口叫做 AutoCloseable，任何类实现了这个接口，都可以在try()中进行实例化。 并且在try, catch, finally结束的时候自动关闭，回收相关资源。</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="使用try-的方式"><a href="#使用try-的方式" class="headerlink" title="使用try()的方式"></a>使用try()的方式</h4><p>把流定义在try()里,try,catch或者finally结束的时候，会自动关闭<br>这种编写代码的方式叫做 try-with-resources， 这是从JDK7开始支持的技术</p>
+<p>所有的流，都实现了一个接口叫做 AutoCloseable，任何类实现了这个接口，都可以在try()中进行实例化。 并且在try, catch, finally结束的时候自动关闭，回收相关资源。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -279,7 +839,16 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><blockquote><p>Reader字符输入流</p><p>Writer字符输出流</p><p>专门用于字符的形式读取和写入数据</p></blockquote><h3 id="使用字符流读取文件"><a href="#使用字符流读取文件" class="headerlink" title="使用字符流读取文件"></a>使用字符流读取文件</h3><blockquote><p>FileReader 是Reader子类，以FileReader 为例进行文件读取</p></blockquote><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><blockquote>
+<p>Reader字符输入流  </p>
+<p>Writer字符输出流  </p>
+<p>专门用于字符的形式读取和写入数据  </p>
+</blockquote>
+<h3 id="使用字符流读取文件"><a href="#使用字符流读取文件" class="headerlink" title="使用字符流读取文件"></a>使用字符流读取文件</h3><blockquote>
+<p>FileReader 是Reader子类，以FileReader 为例进行文件读取  </p>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileReader<span class="token punctuation">;</span>
@@ -306,7 +875,11 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="使用字符流把字符串写入到文件"><a href="#使用字符流把字符串写入到文件" class="headerlink" title="使用字符流把字符串写入到文件"></a>使用字符流把字符串写入到文件</h3><blockquote><p>FileWriter 是Writer的子类，以FileWriter 为例把字符串写入到文件</p></blockquote><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用字符流把字符串写入到文件"><a href="#使用字符流把字符串写入到文件" class="headerlink" title="使用字符流把字符串写入到文件"></a>使用字符流把字符串写入到文件</h3><blockquote>
+<p>FileWriter 是Writer的子类，以FileWriter 为例把字符串写入到文件  </p>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileWriter<span class="token punctuation">;</span>
@@ -330,7 +903,22 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="中文问题"><a href="#中文问题" class="headerlink" title="中文问题"></a>中文问题</h2><h3 id="编码概念"><a href="#编码概念" class="headerlink" title="编码概念"></a>编码概念</h3><p>计算机存放数据只能存放0和1，所有的字符都会被转换为不同的数字，然后再转换成0和1。</p><h3 id="常见编码"><a href="#常见编码" class="headerlink" title="常见编码"></a>常见编码</h3><p>工作后经常接触的编码方式有如下几种：<br><code>ISO-8859-1</code> <code>ASCII</code> 数字和西欧字母<br><code>GBK</code> <code>GB2312</code> <code>BIG5</code> 中文<br><code>UNICODE</code> (统一码，万国码)</p><p>其中<br>ISO-8859-1 包含 ASCII<br>GB2312 是简体中文，BIG5是繁体中文，GBK同时包含简体和繁体以及日文。<br>UNICODE 包括了所有的文字，无论中文，英文，藏文，法文，世界所有的文字都包含其中</p><h3 id="UNICODE和UTF"><a href="#UNICODE和UTF" class="headerlink" title="UNICODE和UTF"></a>UNICODE和UTF</h3><p>UNICODE因为要存放所有的数据，那么它的棋盘是最大的。<br>不仅如此，棋盘里每个数字都是很长的(4个字节)，因为不仅要表示字母，还要表示汉字等。</p><p>如果完全按照UNICODE的方式来存储数据，就会有很大的浪费。<br>比如在ISO-8859-1中，a 字符对应的数字是0x61<br>而UNICODE中对应的数字是 0x00000061，倘若一篇文章大部分都是英文字母，那么按照UNICODE的方式进行数据保存就会消耗很多空间</p><p>在这种情况下，就出现了UNICODE的各种<code>减肥</code>子编码, 比如<code>UTF-8</code>对数字和字母就使用一个字节，而对汉字就使用3个字节，从而达到了<code>减肥还能保证健康</code>的效果</p><p>UTF-8，UTF-16和UTF-32 针对不同类型的数据有不同的<code>减肥效果</code>，一般说来<code>UTF-8</code>是比较常用的方式</p><h3 id="Java采用的是Unicode"><a href="#Java采用的是Unicode" class="headerlink" title="Java采用的是Unicode"></a>Java采用的是Unicode</h3><p>写在.java源代码中的汉字，在执行之后，都会变成JVM中的字符。<br>而这些中文字符采用的编码方式，都是使用UNICODE.</p><h3 id="用FileInputStream-字节流正确读取中文"><a href="#用FileInputStream-字节流正确读取中文" class="headerlink" title="用FileInputStream 字节流正确读取中文"></a>用FileInputStream 字节流正确读取中文</h3><p>为了能够正确的读取中文内容</p><ol><li>必须了解文本是以哪种编码方式保存字符的</li><li>使用字节流读取了文本后，再使用对应的编码方式去识别这些数字，得到正确的字符<br>如本例，一个文件中的内容是字符中，编码方式是GBK，那么读出来的数据一定是D6D0。<br>再使用GBK编码方式识别D6D0，就能正确的得到字符中</li></ol><p>注： 在GBK的棋盘上找到的中字后，JVM会自动找到中在UNICODE这个棋盘上对应的数字，并且以UNICODE上的数字保存在内存中。</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="中文问题"><a href="#中文问题" class="headerlink" title="中文问题"></a>中文问题</h2><h3 id="编码概念"><a href="#编码概念" class="headerlink" title="编码概念"></a>编码概念</h3><p>计算机存放数据只能存放0和1，所有的字符都会被转换为不同的数字，然后再转换成0和1。</p>
+<h3 id="常见编码"><a href="#常见编码" class="headerlink" title="常见编码"></a>常见编码</h3><p>工作后经常接触的编码方式有如下几种：<br><code>ISO-8859-1</code> <code>ASCII</code> 数字和西欧字母<br><code>GBK</code> <code>GB2312</code> <code>BIG5</code> 中文<br><code>UNICODE</code> (统一码，万国码)</p>
+<p>其中<br>ISO-8859-1 包含 ASCII<br>GB2312 是简体中文，BIG5是繁体中文，GBK同时包含简体和繁体以及日文。<br>UNICODE 包括了所有的文字，无论中文，英文，藏文，法文，世界所有的文字都包含其中</p>
+<h3 id="UNICODE和UTF"><a href="#UNICODE和UTF" class="headerlink" title="UNICODE和UTF"></a>UNICODE和UTF</h3><p>UNICODE因为要存放所有的数据，那么它的棋盘是最大的。<br>不仅如此，棋盘里每个数字都是很长的(4个字节)，因为不仅要表示字母，还要表示汉字等。</p>
+<p>如果完全按照UNICODE的方式来存储数据，就会有很大的浪费。<br>比如在ISO-8859-1中，a 字符对应的数字是0x61<br>而UNICODE中对应的数字是 0x00000061，倘若一篇文章大部分都是英文字母，那么按照UNICODE的方式进行数据保存就会消耗很多空间</p>
+<p>在这种情况下，就出现了UNICODE的各种<code>减肥</code>子编码, 比如<code>UTF-8</code>对数字和字母就使用一个字节，而对汉字就使用3个字节，从而达到了<code>减肥还能保证健康</code>的效果</p>
+<p>UTF-8，UTF-16和UTF-32 针对不同类型的数据有不同的<code>减肥效果</code>，一般说来<code>UTF-8</code>是比较常用的方式</p>
+<h3 id="Java采用的是Unicode"><a href="#Java采用的是Unicode" class="headerlink" title="Java采用的是Unicode"></a>Java采用的是Unicode</h3><p>写在.java源代码中的汉字，在执行之后，都会变成JVM中的字符。<br>而这些中文字符采用的编码方式，都是使用UNICODE.</p>
+<h3 id="用FileInputStream-字节流正确读取中文"><a href="#用FileInputStream-字节流正确读取中文" class="headerlink" title="用FileInputStream 字节流正确读取中文"></a>用FileInputStream 字节流正确读取中文</h3><p>为了能够正确的读取中文内容</p>
+<ol>
+<li>必须了解文本是以哪种编码方式保存字符的</li>
+<li>使用字节流读取了文本后，再使用对应的编码方式去识别这些数字，得到正确的字符<br>如本例，一个文件中的内容是字符中，编码方式是GBK，那么读出来的数据一定是D6D0。<br>再使用GBK编码方式识别D6D0，就能正确的得到字符中</li>
+</ol>
+<p>注： 在GBK的棋盘上找到的中字后，JVM会自动找到中在UNICODE这个棋盘上对应的数字，并且以UNICODE上的数字保存在内存中。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -360,7 +948,13 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="缓存流"><a href="#缓存流" class="headerlink" title="缓存流"></a>缓存流</h2><p>以介质是硬盘为例，字节流和字符流的弊端：<br>在每一次读写的时候，都会访问硬盘。 如果读写的频率比较高的时候，其性能表现不佳。</p><p>为了解决以上弊端，采用缓存流。<br>缓存流在读取的时候，会一次性读较多的数据到缓存中，以后每一次的读取，都是在缓存中访问，直到缓存中的数据读取完毕，再到硬盘中读取。</p><p>就好比吃饭，不用缓存就是每吃一口都到锅里去铲。用缓存就是先把饭盛到碗里，碗里的吃完了，再到锅里去铲</p><p>缓存流在写入数据的时候，会先把数据写入到缓存区，直到缓存区达到一定的量，才把这些数据，一起写入到硬盘中去。按照这种操作模式，就不会像字节流，字符流那样每写一个字节都访问硬盘，从而减少了IO操作</p><h3 id="使用缓存流读取数据"><a href="#使用缓存流读取数据" class="headerlink" title="使用缓存流读取数据"></a>使用缓存流读取数据</h3><p>缓存字符输入流 BufferedReader 可以一次读取一行数据</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="缓存流"><a href="#缓存流" class="headerlink" title="缓存流"></a>缓存流</h2><p>以介质是硬盘为例，字节流和字符流的弊端：<br>在每一次读写的时候，都会访问硬盘。 如果读写的频率比较高的时候，其性能表现不佳。 </p>
+<p>为了解决以上弊端，采用缓存流。<br>缓存流在读取的时候，会一次性读较多的数据到缓存中，以后每一次的读取，都是在缓存中访问，直到缓存中的数据读取完毕，再到硬盘中读取。 </p>
+<p>就好比吃饭，不用缓存就是每吃一口都到锅里去铲。用缓存就是先把饭盛到碗里，碗里的吃完了，再到锅里去铲   </p>
+<p>缓存流在写入数据的时候，会先把数据写入到缓存区，直到缓存区达到一定的量，才把这些数据，一起写入到硬盘中去。按照这种操作模式，就不会像字节流，字符流那样每写一个字节都访问硬盘，从而减少了IO操作</p>
+<h3 id="使用缓存流读取数据"><a href="#使用缓存流读取数据" class="headerlink" title="使用缓存流读取数据"></a>使用缓存流读取数据</h3><p>缓存字符输入流 BufferedReader 可以一次读取一行数据</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedReader<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
@@ -395,7 +989,9 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="使用缓存流写出数据"><a href="#使用缓存流写出数据" class="headerlink" title="使用缓存流写出数据"></a>使用缓存流写出数据</h3><p>PrintWriter 缓存字符输出流，可以一次写出一行数据</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用缓存流写出数据"><a href="#使用缓存流写出数据" class="headerlink" title="使用缓存流写出数据"></a>使用缓存流写出数据</h3><p>PrintWriter 缓存字符输出流，可以一次写出一行数据  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileWriter<span class="token punctuation">;</span>
@@ -423,7 +1019,13 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="flush"><a href="#flush" class="headerlink" title="flush"></a>flush</h3><blockquote><p>立即直接把数据写入到硬盘，而不是等缓存满了才写出去</p><p>这时候就需要用到flush</p></blockquote><p>使用：<code>pw.flush()</code></p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="flush"><a href="#flush" class="headerlink" title="flush"></a>flush</h3><blockquote>
+<p>立即直接把数据写入到硬盘，而不是等缓存满了才写出去  </p>
+<p>这时候就需要用到flush  </p>
+</blockquote>
+<p>使用：<code>pw.flush()</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileWriter<span class="token punctuation">;</span>
@@ -448,7 +1050,15 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h2><blockquote><p>DataInputStream 数据输入流</p><p>DataOutputStream 数据输出流</p></blockquote><h3 id="直接进行字符串的读写"><a href="#直接进行字符串的读写" class="headerlink" title="直接进行字符串的读写"></a>直接进行字符串的读写</h3><p>使用数据流的writeUTF()和readUTF() 可以进行数据的格式化顺序读写<br>如本例，通过DataOutputStream 向文件顺序先<code>写出</code> 布尔值，整数和字符串。 然后再通过DataInputStream 顺序<code>读入</code>这些数据。</p><p>数据流也是建立在其他流的基础上</p><p><strong>注</strong>：要用DataInputStream 读取一个文件，这个文件必须是由DataOutputStream 写出的，否则会出现EOFException，因为DataOutputStream 在写出的时候会做一些特殊标记，只有DataInputStream 才能成功的读取。</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h2><blockquote>
+<p>DataInputStream 数据输入流  </p>
+<p>DataOutputStream 数据输出流  </p>
+</blockquote>
+<h3 id="直接进行字符串的读写"><a href="#直接进行字符串的读写" class="headerlink" title="直接进行字符串的读写"></a>直接进行字符串的读写</h3><p>使用数据流的writeUTF()和readUTF() 可以进行数据的格式化顺序读写<br>如本例，通过DataOutputStream 向文件顺序先<code>写出</code> 布尔值，整数和字符串。 然后再通过DataInputStream 顺序<code>读入</code>这些数据。  </p>
+<p>数据流也是建立在其他流的基础上</p>
+<p><strong>注</strong>：要用DataInputStream 读取一个文件，这个文件必须是由DataOutputStream 写出的，否则会出现EOFException，因为DataOutputStream 在写出的时候会做一些特殊标记，只有DataInputStream 才能成功的读取。  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>DataInputStream<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>DataOutputStream<span class="token punctuation">;</span>
@@ -498,7 +1108,12 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h2><p>对象流指的是可以直接把一个对象以流的形式传输给其他的介质，比如硬盘</p><p>一个对象以流的形式进行传输，叫做序列化。 该对象所对应的类，必须是实现Serializable接口</p><h3 id="序列化一个对象"><a href="#序列化一个对象" class="headerlink" title="序列化一个对象"></a>序列化一个对象</h3><p>创建一个Hero对象，设置其名称为garen。<br>把该对象序列化到一个文件garen.lol。<br>然后再通过序列化把该文件转换为一个Hero对象</p><p><strong>注</strong>：把一个对象序列化有一个前提是：这个对象的类，必须实现了Serializable接口</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h2><p>对象流指的是可以直接把一个对象以流的形式传输给其他的介质，比如硬盘 </p>
+<p>一个对象以流的形式进行传输，叫做序列化。 该对象所对应的类，必须是实现Serializable接口</p>
+<h3 id="序列化一个对象"><a href="#序列化一个对象" class="headerlink" title="序列化一个对象"></a>序列化一个对象</h3><p>创建一个Hero对象，设置其名称为garen。<br>把该对象序列化到一个文件garen.lol。<br>然后再通过序列化把该文件转换为一个Hero对象</p>
+<p><strong>注</strong>：把一个对象序列化有一个前提是：这个对象的类，必须实现了Serializable接口</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -550,7 +1165,12 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> 1L<span class="token punctuation">;</span>
     <span class="token keyword">public</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">float</span> hp<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="System-in"><a href="#System-in" class="headerlink" title="System.in"></a>System.in</h2><blockquote><p>System.out 是常用的在控制台输出数据的</p><p>System.in 可以从控制台输入数据</p></blockquote><h3 id="System-in-1"><a href="#System-in-1" class="headerlink" title="System.in"></a>System.in</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="System-in"><a href="#System-in" class="headerlink" title="System.in"></a>System.in</h2><blockquote>
+<p>System.out 是常用的在控制台输出数据的</p>
+<p>System.in 可以从控制台输入数据  </p>
+</blockquote>
+<h3 id="System-in-1"><a href="#System-in-1" class="headerlink" title="System.in"></a>System.in</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
@@ -572,7 +1192,9 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="Scanner读取字符串"><a href="#Scanner读取字符串" class="headerlink" title="Scanner读取字符串"></a>Scanner读取字符串</h3><p>使用System.in.read虽然可以读取数据，但是很不方便<br>使用Scanner就可以逐行读取了</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Scanner读取字符串"><a href="#Scanner读取字符串" class="headerlink" title="Scanner读取字符串"></a>Scanner读取字符串</h3><p>使用System.in.read虽然可以读取数据，但是很不方便<br>使用Scanner就可以逐行读取了</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
 
@@ -587,7 +1209,9 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="Scanner从控制台读取整数"><a href="#Scanner从控制台读取整数" class="headerlink" title="Scanner从控制台读取整数"></a>Scanner从控制台读取整数</h3><p>使用Scanner从控制台读取整数</p><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Scanner从控制台读取整数"><a href="#Scanner从控制台读取整数" class="headerlink" title="Scanner从控制台读取整数"></a>Scanner从控制台读取整数</h3><p>使用Scanner从控制台读取整数</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> stream<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
 
@@ -599,14 +1223,234 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         <span class="token keyword">int</span> b <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第二个整数："</span><span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="https://blog.sky03.cn" rel="external nofollow noreferrer">Sky03</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://blog.sky03.cn/posts/21501.html">https://blog.sky03.cn/posts/21501.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.sky03.cn" target="_blank">Sky03</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.sky03.cn" rel="external nofollow noreferrer">Sky03</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.sky03.cn/posts/21501.html">https://blog.sky03.cn/posts/21501.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.sky03.cn" target="_blank">Sky03</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/Java-基础/"><span class="chip bg-color">Java-基础</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/share/css/share.min.css"><div id="article-share"></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><link rel="stylesheet" href="/libs/gitalk/gitalk.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/css/my-gitalk.css"><div class="card gitalk-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="gitalk-container" class="card-content"></div></div><script src="/libs/gitalk/gitalk.min.js"></script><script>let gitalk = new Gitalk({
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java-基础/">
+                                    <span class="chip bg-color">Java-基础</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
         clientID: '5010de82c59a66d71db9',
         clientSecret: '9eb212e068833e867f1cfae3dd4855b8520be712',
         repo: 'Sky03-Blog-Background',
@@ -618,7 +1462,159 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         createIssueManually: true    //是否每次初始化都要点init
     });
 
-    gitalk.render('gitalk-container');</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/posts/26149.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="idea使用小技巧"> <span class="card-title">idea使用小技巧</span></div></a><div class="card-content article-content"><div class="summary block-with-text">debug卡顿问题一般破解的idea的debug有点卡顿从控制台来看，每次都会连接本地地址(127.0.0.1)，问题可能就出在这里具体参考 这里 解决方法修改host文件：用VIM打开host文件 sudo vim /private/et</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2018-12-24</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/教程/" class="post-category">教程</a></span></div></div><div class="card-action article-tags"><a href="/tags/小技巧/"><span class="chip bg-color">小技巧</span></a> <a href="/tags/idea/"><span class="chip bg-color">idea</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/17634.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="CSS整理笔记"> <span class="card-title">CSS整理笔记</span></div></a><div class="card-content article-content"><div class="summary block-with-text">选择器选择器主要分3种 元素选择器 id选择器 类选择器 元素选择器&lt;style> p{ color:red; } &lt;/style> id选择器#d1{ color:blue; } 类选择器&lt;style</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2018-12-17</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/基础/" class="post-category">基础</a> <a href="/categories/基础/前端/" class="post-category">前端</a> <a href="/categories/基础/前端/CSS/" class="post-category">CSS</a></span></div></div><div class="card-action article-tags"><a href="/tags/CSS/"><span class="chip bg-color">CSS</span></a> <a href="/tags/前端/"><span class="chip bg-color">前端</span></a></div></div></div></div></article></div><script>$('#articleContent').on('copy', function (e) {
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/26149.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="idea使用小技巧">
+                        
+                        <span class="card-title">idea使用小技巧</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            debug卡顿问题一般破解的idea的debug有点卡顿从控制台来看，每次都会连接本地地址(127.0.0.1)，问题可能就出在这里具体参考 这里
+解决方法修改host文件：用VIM打开host文件
+sudo vim /private/et
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-12-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/教程/" class="post-category">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/小技巧/">
+                        <span class="chip bg-color">小技巧</span>
+                    </a>
+                    
+                    <a href="/tags/idea/">
+                        <span class="chip bg-color">idea</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/17634.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="CSS整理笔记">
+                        
+                        <span class="card-title">CSS整理笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            选择器选择器主要分3种 
+
+元素选择器 
+id选择器 
+类选择器
+
+元素选择器&lt;style>
+p{
+  color:red;
+}
+&lt;/style>
+id选择器#d1{ 
+  color:blue;
+}
+类选择器&lt;style
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-12-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/基础/" class="post-category">
+                                    基础
+                                </a>
+                            
+                            <a href="/categories/基础/前端/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/基础/前端/CSS/" class="post-category">
+                                    CSS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/前端/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
         // IE8 or earlier browser is 'undefined'
         if (typeof window.getSelection === 'undefined') return;
 
@@ -651,7 +1647,55 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 
         selection.selectAllChildren(newdiv);
         window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });</script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeBlockFuction.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeLang.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeCopy.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -722,4 +1766,227 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2018</span> &nbsp;by&nbsp; <a href="https://blog.sky03.cn" target="_blank">Sky03</a><br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">77.7k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="sitetime">载入运行时间...</span><script>function siteTime(){var e=36e5,t=24*e,n=new Date,o="2018",r=n.getFullYear(),a=n.getMonth()+1,i=n.getDate(),l=n.getHours(),m=n.getMinutes(),M=n.getSeconds(),g=Date.UTC(o,"11","12","0","0","0"),d=Date.UTC(r,a,i,l,m,M)-g,s=Math.floor(d/31536e6),u=Math.floor(d/t-365*s),T=Math.floor((d-(365*s+u)*t)/e),c=Math.floor((d-(365*s+u)*t-T*e)/6e4),f=Math.floor((d-(365*s+u)*t-T*e-6e4*c)/1e3);o==r?(document.getElementById("year").innerHTML=r,document.getElementById("sitetime").innerHTML="本站已勉强运行 "+u+" 天 "+T+" 小时 "+c+" 分钟 "+f+" 秒"):(document.getElementById("year").innerHTML=o+" - "+r,document.getElementById("sitetime").innerHTML="本站已勉强运行 "+s+" 年 "+u+" 天 "+T+" 小时 "+c+" 分钟 "+f+" 秒")}setInterval(siteTime,1e3)</script><br><span id="icp"><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/icp.png" style="vertical-align:text-bottom"> <a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备19042307号</a></span></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/skyls03" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:skyls03@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=946523579" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 946523579" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a> <a href="https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" data-position="top" data-delay="50"><i class="fab fa-zhihu1">知</i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/search.js"></script><script>$(function(){searchFunc("https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/matery.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/js/medium-zoom.min.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?02ee3ea6dba8039d1ecb21d3d6f253cb";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/others/clicklove.js" async></script><script async src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/background/ribbon-dynamic.js" async></script><script src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/libs/instantpage/instantpage.js" type="module"></script><script>window.$crisp=[],window.CRISP_WEBSITE_ID="ace4111a-6f1a-4fb2-9ff3-e96a20275ac8",d=document,s=d.createElement("script"),s.src="https://client.crisp.chat/l.js",s.async=1,d.getElementsByTagName("head")[0].appendChild(s)</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)0<=(t=c[r].getBoundingClientRect()).top&&0<=t.left&&t.top<=(e.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n()},e.src=i}();var t}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this)</script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2018</span>
+            &nbsp;by&nbsp;
+            <a href="https://blog.sky03.cn" target="_blank">Sky03</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">78.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "11";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">豫ICP备19042307号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/skyls03" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:skyls03@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=946523579" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 946523579" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/liu-lang-de-feng-zhu/activities" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/medium-zoom.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?02ee3ea6dba8039d1ecb21d3d6f253cb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script> 
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="ace4111a-6f1a-4fb2-9ff3-e96a20275ac8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

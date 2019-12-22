@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Mac使用优化, Sky03">
-    <meta name="description" content="让Mac的Dock快速显示和隐藏使用OS X的时候都会选择将Dock隐藏，等使用时将光标向下划Dock会自动弹出显示。这个显示或隐藏会有一点点（大概1秒左右）的延迟，使用下面的方法可以消除这个延迟：
-打开终端，输入代码：
-defaults ">
+    <meta name="keywords" content="国内Github访问加速, Sky03">
+    <meta name="description" content="原理绕过国内DNS解析，直接访问GitHub的CDN节点，从而达到加速的目的。该方法也可加速其他因为CDN被屏蔽导致访问慢的网站。
+大白话：其实就是不用默认DNS解析到的IP，而是直接指定一个IP去访问；比如：你去访问github.com，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@ defaults ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Mac使用优化 | Sky03&#39;s Blog</title>
+    <title>国内Github访问加速 | Sky03&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +266,12 @@ defaults ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mac使用优化</h1>
+                    <h1 class="description center-align post-title">国内Github访问加速</h1>
                 </div>
             </div>
         </div>
@@ -386,29 +385,12 @@ defaults ">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/教程/">
-                                <span class="chip bg-color">教程</span>
-                            </a>
-                        
-                            <a href="/tags/Mac/">
-                                <span class="chip bg-color">Mac</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/教程/" class="post-category">
-                                教程
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -417,21 +399,21 @@ defaults ">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布于:&nbsp;&nbsp;
-                    2019-03-14
+                    2019-12-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新于:&nbsp;&nbsp;
-                    2019-03-17
+                    2019-12-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    226
+                    395
                 </div>
                 
 
@@ -449,24 +431,36 @@ defaults ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="让Mac的Dock快速显示和隐藏"><a href="#让Mac的Dock快速显示和隐藏" class="headerlink" title="让Mac的Dock快速显示和隐藏"></a>让Mac的Dock快速显示和隐藏</h2><p>使用OS X的时候都会选择将Dock隐藏，等使用时将光标向下划Dock会自动弹出显示。这个显示或隐藏会有一点点（大概1秒左右）的延迟，使用下面的方法可以消除这个延迟：</p>
-<p>打开终端，输入代码：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">defaults <span class="token function">write</span> com.apple.Dock autohide-delay -float 0 <span class="token operator">&amp;&amp;</span> <span class="token function">killall</span> Dock<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后输入密码，就可以快速的隐藏和显示Dock栏了。</p>
-<p>如果想恢复成以前的延迟速度，可以在终端输入一下代码：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">defaults delete com.apple.Dock autohide-delay <span class="token operator">&amp;&amp;</span> <span class="token function">killall</span> Dock<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="Tomcat中文乱码问题"><a href="#Tomcat中文乱码问题" class="headerlink" title="Tomcat中文乱码问题"></a>Tomcat中文乱码问题</h2><p>使用Homebrew安装的Tomcat会有中文乱码的问题</p>
+                <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>绕过国内DNS解析，直接访问GitHub的CDN节点，从而达到加速的目的。该方法也可加速其他因为CDN被屏蔽导致访问慢的网站。</p>
+<p>大白话：其实就是不用默认DNS解析到的IP，而是直接指定一个IP去访问；比如：你去访问github.com，默认的DNS给你解析到52.74.223.119，而我用hosts文件给系统指定了一个IP，以后再访问github.com，就直接去访问我配置的那个IP。</p>
+<p>所以如果你配置的那个IP就成了访问效果好坏的关键。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>分别查询以下三个链接的DNS解析地址：</p>
 <ul>
-<li>解决方案，修改Tomcat的启动脚本 <code>tomcat_dir/bin/catclina.sh</code></li>
+<li>github.com</li>
+<li>assets-cdn.github.com</li>
+<li>github.global.ssl.fastly.net</li>
 </ul>
-<p>把</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$LOGGING_MANAGER</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  LOGGING_MANAGER<span class="token operator">=</span><span class="token string">"-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager"</span>
-<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>修改为</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$LOGGING_MANAGER</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  LOGGING_MANAGER<span class="token operator">=</span><span class="token string">"-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Dfile.encoding=UTF-8"</span>
-<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>查询DNS的解析网站有：</p>
+<ul>
+<li><a href="https://tool.chinaz.com/dns" target="_blank" rel="noopener">站长工具</a> </li>
+<li><a href="http://www.ip138.com" target="_blank" rel="noopener">http://www.ip138.com</a> </li>
+<li><a href="https://www.ipaddress.com" target="_blank" rel="noopener">https://www.ipaddress.com</a> </li>
+</ul>
+<p>记得多查几次，选择延迟小、稳定不丢包的IP，然后记下来</p>
+<p>然后修改<code>hosts</code>文件</p>
+<p>Windows系统：进入目录：<code>C:\Windows\System32\drivers\etc\</code>，复制 <code>hosts</code>文件 到桌面，用编辑器打开，在末尾加上刚才查询到的IP和对应的域名，格式为：<code>IP (空格) 域名</code>。我的hosts文件：</p>
+<p><img src="/medias/loading.gif" data-original="https://images.sky03.cn/img/20191215154455.png" alt></p>
+<p>保存之后再将这个文件复制到目录：<code>C:\Windows\System32\drivers\etc\</code>中，会提示拒绝访问，用管理员点确认即可 。</p>
+<blockquote>
+<p>为什么不直接改？因为系统文件不让你修改</p>
+<p>也可以vscode直接改，保存的时候会有个提示，点击<code>Retry as Admin</code>即可</p>
+</blockquote>
+<p>然后再手动刷新系统DNS缓存，命令：Win+R cmd ，输入<code>ipconfig /flushdns</code> 即可</p>
+<p><img src="/medias/loading.gif" data-original="https://images.sky03.cn/img/20191215142731.png" alt></p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="/medias/loading.gif" data-original="https://images.sky03.cn/img/20191215142948.png" alt></p>
+<p><img src="/medias/loading.gif" data-original="https://images.sky03.cn/img/20191215143032.png" alt></p>
+<p><img src="/medias/loading.gif" data-original="https://images.sky03.cn/img/20191215140315.png" alt></p>
+<p><img src="/medias/loading.gif" data-original="https://images.sky03.cn/img/20191215154829.png" alt="校园网的2M/s宽带"></p>
 
             </div>
             <hr/>
@@ -492,7 +486,7 @@ defaults ">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.sky03.cn/posts/10258.html">https://blog.sky03.cn/posts/10258.html</a>
+                    <a href="https://blog.sky03.cn/posts/29055.html">https://blog.sky03.cn/posts/29055.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -529,15 +523,7 @@ defaults ">
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/教程/">
-                                    <span class="chip bg-color">教程</span>
-                                </a>
-                            
-                                <a href="/tags/Mac/">
-                                    <span class="chip bg-color">Mac</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -726,68 +712,40 @@ defaults ">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/55715.html">
+                <a href="/posts/29055.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Servlet-上">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="国内Github访问加速">
                         
-                        <span class="card-title">Servlet-上</span>
+                        <span class="card-title">国内Github访问加速</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Servlet
-概念：运行在服务器端的小程序
-
-快速入门：
-
-创建JavaEE项目
-定义一个类，实现(implements)Servlet接口
-实现接口中的抽象方法(五个)
-配置Servlet（web.xml）
-
-
-Servlet的生命周期
+                            原理绕过国内DNS解析，直接访问GitHub的CDN节点，从而达到加速的目的。该方法也可加速其他因为CDN被屏蔽导致访问慢的网站。
+大白话：其实就是不用默认DNS解析到的IP，而是直接指定一个IP去访问；比如：你去访问github.com，
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-15
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            <a href="/categories/Java/J2EE/" class="post-category">
-                                    J2EE
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Sky03
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/J2EE/">
-                        <span class="chip bg-color">J2EE</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -798,44 +756,34 @@ Servlet的生命周期
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/41882.html">
+                <a href="/posts/1663.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Hexo安装教程">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="静态博客访问优化的终极解决方案">
                         
-                        <span class="card-title">Hexo安装教程</span>
+                        <span class="card-title">静态博客访问优化的终极解决方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-本项目基于macOS（Windows也同样适用）
+                            前言
 
-0. 前言使用github pages服务搭建博客的好处有：
+本人咸鱼学生一枚，没多大见识，以下有任何说的不对的地方，欢迎大家指正。
 
-
-全是静态文件，访问速度快；
-
-免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；
-
-可以随意绑
+首先本教程是基于 域名已经备案 的前提下进行的，理论上，任何静态页面都可以使用本教程，哪怕是你写的一个小demo网页，想让别人看到，都可以使用，前提是域名已经
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/教程/" class="post-category">
-                                    教程
-                                </a>
-                            
-                            <a href="/categories/教程/Hexo/" class="post-category">
+                            <a href="/categories/Hexo/" class="post-category">
                                     Hexo
                                 </a>
                             
@@ -848,10 +796,6 @@ Servlet的生命周期
                     
                     <a href="/tags/Hexo/">
                         <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/教程/">
-                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>
