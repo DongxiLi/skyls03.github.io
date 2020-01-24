@@ -133,9 +133,7 @@
       
         
         
-          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;本贴收藏了很多个人觉得很好用的软件，或者你有好用的软件也可以在评论区留言。&lt;/p&gt;
-&lt;p&gt;持续更新中。。。&lt;/p&gt;
-&lt;h2
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
         
       
     
@@ -593,9 +591,9 @@
       <category term="Hexo" scheme="https://blog.sky03.cn/categories/%E6%95%99%E7%A8%8B/Hexo/"/>
     
     
-      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Hexo" scheme="https://blog.sky03.cn/tags/Hexo/"/>
+    
+      <category term="教程" scheme="https://blog.sky03.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
